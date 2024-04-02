@@ -14,9 +14,14 @@ const Search = ({onSearch, onClear}) => {
             onClear()
         }
     }
+    const handleEnterSearch = (e)=>{
+        if(e.key === 'Enter' && inputValue) {
+            onSearch(inputValue)
+        }
+    }
   return (
     <div className="relative text-gray-600 ">
-    <input type="search" name="serch"  value={inputValue} onChange={handleInputChange} placeholder="Search" className="bg-white h-10 px-5 pr-10 w-full rounded-full text-sm focus:outline-none"/>
+    <input type="search" name="serch"  value={inputValue} onKeyDown={handleEnterSearch} onChange={handleInputChange}  placeholder="Search" className="bg-white h-10 px-5 pr-10 w-full rounded-full text-sm focus:outline-none"/>
     <Button onClick={onClick} disabled={!inputValue}>
      <SearchIcon/>
       </Button>
