@@ -10,7 +10,7 @@ const DetailsCard = ({age, countries, gender , loading }) => {
     }
     if (!age &&!gender &&!countries.length) {
       return <div className="mt-3">
-        <Alert text="Search to obtain gender, country, and age information: Rewrite this statement." />
+        <Alert text="Search to obtain gender, country, and age information" />
       </div>
     }
   return (
